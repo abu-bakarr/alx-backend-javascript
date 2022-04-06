@@ -1,4 +1,4 @@
-function getFullResponseFromAPI(success) {
+export default function getFullResponseFromAPI(success) {
     return new Promise(async(resolve, reject) => {
         try {
             if (success === true) {
@@ -11,6 +11,5 @@ function getFullResponseFromAPI(success) {
         } catch {
             console.error(error)
         }
-    });
+    })
 }
-export default getFullResponseFromAPI;
