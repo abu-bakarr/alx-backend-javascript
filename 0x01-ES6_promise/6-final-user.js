@@ -5,10 +5,9 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   const newSignUpUser = Promise.resolve(signUpUser(firstName, lastName));
   const newUploadPhoto = Promise.reject(uploadPhoto(fileName));
 
-  const p = Promise.all([newSignUpUser, newUploadPhoto])
-    .then((data) => {
-      console.log('data', data);
+  Promise.all([newSignUpUser, newUploadPhoto])
+    .then(() => {
+    //   console.log('data', data);
     })
     .catch(() => {});
-  console.log('promise', p);
 }
