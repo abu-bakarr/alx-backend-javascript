@@ -1,18 +1,14 @@
-const uploadPhoto = () => {
-    //    retrun Promise.resolve
-    return {
+export function uploadPhoto() {
+    return Promise.resolve({
         status: 200,
         body: 'photo-profile-1',
-    }
-}
-const createUser = () => {
-    return {
-        firstName: 'Guillaume',
-        lastName: 'Salva',
-    }
+    });
 }
 
-export {
-    uploadPhoto,
-    createUser
+
+export function createUser() {
+    return Promise.resolve({
+        firstName: 'Guillaume',
+        lastName: 'Salva',
+    });
 }
