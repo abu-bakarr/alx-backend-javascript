@@ -1,13 +1,19 @@
 function getFullResponseFromAPI(success) {
     return new Promise(async(resolve, reject) => {
-            success && await resolve({ status: 200, body: 'Success' });
-            await reject('The fake API is not working currently')
+
+            if (success === true) {
+                return await resolve({ status: 200, body: 'Success' });
+            }
+            if (success === false) {
+                return await reject('The fake API is not working currently')
+            }
+
         })
         .then((success) => {
             console.log(success);
         })
         .catch((error) => {
-            throw new Error(error);
+            console.log(error);
         })
 }
 
