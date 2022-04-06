@@ -1,6 +1,6 @@
 function getFullResponseFromAPI(success) {
     return new Promise(async(resolve, reject) => {
-
+        try {
             if (success === true) {
                 return resolve({ status: 200, body: 'Success' });
             }
@@ -8,14 +8,9 @@ function getFullResponseFromAPI(success) {
                 return reject('The fake API is not working currently')
             }
 
-        })
-        .then((success) => {
-
-            console.log("success", success)
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+        } catch {
+            console.error(error)
+        }
+    });
 }
-
 export default getFullResponseFromAPI;
