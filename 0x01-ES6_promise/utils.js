@@ -1,4 +1,5 @@
 const uploadPhoto = () => {
+    //    retrun Promise.resolve
     return {
         status: 200,
         body: 'photo-profile-1',
