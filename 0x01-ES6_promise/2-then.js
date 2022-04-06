@@ -1,17 +1,17 @@
-function handleResponseFromAPI(promise) {
-    return new Promise(async(resolve, reject) => {
-            promise && await resolve({ status: 200, body: 'Success' });
-            await reject('The fake API is not working currently')
-        })
-        .then((success) => {
-            console.log(success);
-        })
-        .catch((error) => {
-            console.log("error", {});
-        })
-        .finally(() => {
-            console.log("Got a response from the API");
-        })
+function handleResponseFromAPI(data) {
+  return new Promise((resolve, reject) => {
+    data && resolve({ status: 200, body: 'Success' });
+    reject(new Error('The fake API is not working currently'));
+  })
+    .then((success) => {
+      console.log('success', success);
+    })
+    .catch((_error) => {
+      console.log('error', _error);
+    })
+    .finally(() => {
+      console.log('Got a response from the API');
+    });
 }
 
 export default handleResponseFromAPI;

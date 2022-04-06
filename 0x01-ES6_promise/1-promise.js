@@ -1,15 +1,13 @@
 export default function getFullResponseFromAPI(success) {
-    return new Promise(async(resolve, reject) => {
-        try {
-            if (success === true) {
-                return resolve({ status: 200, body: 'Success' });
-            }
-            if (success === false) {
-                return reject('The fake API is not working currently')
-            }
-
-        } catch {
-            console.error(error)
-        }
-    })
+  return new Promise((resolve, reject) => {
+    try {
+      if (success === true) {
+        return resolve({ status: 200, body: 'Success' });
+      }
+   	  return reject('The fake API is not working currently');
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
+  });
 }
