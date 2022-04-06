@@ -4,7 +4,7 @@ function handleResponseFromAPI(promise) {
             await reject('The fake API is not working currently')
         })
         .then((success) => {
-            console.log(success);
+
         })
         .catch((error) => {
             console.log("error", error);
