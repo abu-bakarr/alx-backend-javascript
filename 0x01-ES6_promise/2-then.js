@@ -4,10 +4,10 @@ function handleResponseFromAPI(promise) {
             await reject('The fake API is not working currently')
         })
         .then((success) => {
-
+            console.log(success);
         })
         .catch((error) => {
-            console.log("error", error);
+            console.log("error", {});
         })
         .finally(() => {
             console.log("Got a response from the API");
