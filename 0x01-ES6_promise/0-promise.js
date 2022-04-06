@@ -1,8 +1,5 @@
 function getResponseFromAPI() {
-    return new Promise((resolve, reject) => {
-        resolve('Success!');
-        reject('fail')
-    })
+    return new Promise((resolve, reject) => {})
 }
 
 
