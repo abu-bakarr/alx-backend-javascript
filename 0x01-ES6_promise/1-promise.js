@@ -7,7 +7,7 @@ function getFullResponseFromAPI(success) {
             console.log(success);
         })
         .catch((error) => {
-            console.log(error);
+            throw new Error(error);
         })
 }
 
