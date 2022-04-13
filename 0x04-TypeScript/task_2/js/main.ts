@@ -41,4 +41,7 @@ function createEmployee(salary: number): Director | Teacher {
 	return new Director();
 }
 
+function isDirector(employee: Director | Teacher): boolean {
+	return employee instanceof Director;
+}
 
