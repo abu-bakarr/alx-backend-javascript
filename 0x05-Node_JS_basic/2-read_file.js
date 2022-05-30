@@ -1,13 +1,21 @@
-const fileSystem = require('fs');
+const fs = require("fs");
+const readline = require("readline");
+
+
 
 const countStudents =(path) => { 
-  var stream = fileSystem.createReadStream(path)
+  var stream = fs.createReadStream(path);
   try {
-   
-    stream.pipe(parse({ delimiter: ",", from_line: 2 }))
-    .on("data", function (row) {
-      console.log(row);
-    })
+    const rl = readline.createInterface({ input: stream });
+    let data = [];
+     
+    rl.on("line", (row) => {
+        data.push(row.split(","));
+    });
+     
+    rl.on("close", () => {
+        console.log(data);
+    });
    
   } catch (error) {
     throw new Error('Cannot load the database');
